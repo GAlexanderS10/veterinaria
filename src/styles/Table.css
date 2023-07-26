@@ -37,6 +37,7 @@ body.dark{
 .table-cliente {
     border-collapse: collapse;
     width: 100%;
+    border: var();
 
     
 }

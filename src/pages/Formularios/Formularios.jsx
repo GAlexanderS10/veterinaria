@@ -10,13 +10,12 @@ const Formularios = () => {
 
     const navigate = useNavigate();
 
-    // Estado para controlar los campos del formulario de inicio de sesión
+  
   const [signInFormData, setSignInFormData] = useState({
     userName: '',
     password: '',
   });
 
-  // Función para manejar el cambio de inputs en el formulario de inicio de sesión
   const handleSignInInputChange = (event) => {
     const { name, value } = event.target;
     setSignInFormData({
@@ -25,7 +24,7 @@ const Formularios = () => {
     });
   };
 
-  // Función para iniciar sesión
+
   const handleSignInSubmit = async (event) => {
     event.preventDefault();
 
@@ -37,35 +36,31 @@ const Formularios = () => {
       
       const { token, dni } = response.data;
 
-      // Guardar el token JWT en el Local Storage para su uso posterior
+  
       localStorage.setItem('token', token);
       localStorage.setItem('dni', dni);
   
-      // Mostrar el token y el DNI del usuario en la consola
+   
       console.log('Token:', token);
-      console.log('DNI del usuario:', dni);
   
 
-      // Mostrar SweetAlert de éxito
+
       Swal.fire({
         icon: 'success',
         title: 'Inicio de sesión exitoso',
         text: 'Bienvenido al sistema!',
       });
 
-      // Limpiar los campos del formulario
       setSignInFormData({
         nombreUsuario: '',
         passw: '',
       });
 
-      // Redireccionar a la página de menú
       navigate('/menu');
 
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
 
-      // Mostrar SweetAlert de error
       Swal.fire({
         icon: 'error',
         title: 'Error al iniciar sesión',
@@ -110,7 +105,7 @@ const Formularios = () => {
     try {
       const requiredFields = ['nombres', 'apellidos', 'dni', 'celular', 'email', 'userName', 'password'];
 
-      // Verificar si algún campo requerido está vacío
+
       const isEmptyField = requiredFields.some((field) => !formData[field]);
 
       if (isEmptyField) {
@@ -122,13 +117,13 @@ const Formularios = () => {
         return;
       }
 
-      // Enviar la solicitud de creación de usuario a la API
+
       const response = await axios.post('https://localhost:7266/api/Usuario/crearusuario', formData);
       const usuarioIdRecienCreado = response.data;
 
       console.log(`Usuario registrado con el UsuarioId: ${usuarioIdRecienCreado}`);
 
-      // LIMPIAR LOS CAMPOS DEL FORMULARIO
+  
       setFormData({
         nombres: '',
         apellidos: '',
@@ -141,17 +136,16 @@ const Formularios = () => {
 
       handleSignInClick();
 
-      // ASIGNAR EL ROL "Cliente" AL USUARIO QUE SE REGISTRE CON ESTE FORMULARIO
       const asignarRolModel = {
         UsuarioId: usuarioIdRecienCreado,
-        RolId: 4, // ROLID ESPECIFICO DEL ROL "Cliente"
+        RolId: 4, 
       };
 
       await axios.post('https://localhost:7266/api/UsuarioRol/asignar-rol', asignarRolModel);
 
       console.log('Rol "Cliente" asignado al usuario exitosamente.');
 
-      // Mostrar SweetAlert de éxito
+
       Swal.fire({
         icon: 'success',
         title: 'Registro de usuario exitoso',
@@ -162,7 +156,6 @@ const Formularios = () => {
     } catch (error) {
       console.error('Error al registrar el usuario:', error);
 
-      // Mostrar SweetAlert de error
       Swal.fire({
         icon: 'error',
         title: 'Error al registrar el usuario',
@@ -180,7 +173,7 @@ const Formularios = () => {
   action="#"
   className={`sign-in-form ${showSignInForm ? 'visible' : ''}`}
   ref={formRef}
-  onSubmit={handleSignInSubmit} // Asociamos el formulario con la función handleSignInSubmit
+  onSubmit={handleSignInSubmit} 
 >
   {/* Formulario de inicio de sesión */}
   <h2 className="title">INICIAR SESIÓN</h2>
@@ -207,7 +200,6 @@ const Formularios = () => {
   <input type="submit" value="Ingresar" className="btn solid" />
 </form>
             <form action="#" className={`sign-up-form ${showSignInForm ? '' : 'visible'}`} onSubmit={handleRegistroSubmit}>
-              {/* Formulario de registro de usuario */}
               <h2 className="title">REGISTRO DE USUARIO</h2>
               <div className="input-field-grid">
                 <div className="input-field">

@@ -6,6 +6,7 @@ import Topbar from './Topbar'
 import { ModuloServicio } from '../ModuloServicio/ModuloServicio'
 import { ModuloCliente } from "../ModuloCliente/ModuloCliente";
 import { ModuloMascota } from "../ModuloMascota/ModuloMascota";
+import { ModuloCita } from "../ModuloCita/ModuloCita";
 
 const Sidebar = () => {
 
@@ -169,6 +170,7 @@ const Sidebar = () => {
           {activeOption === "servicio" && <ModuloServicio />}
           {activeOption === "cliente" && <ModuloCliente />}
           {activeOption === "mascota" && <ModuloMascota />}
+          {activeOption === "citas" && <ModuloCita />}
         </div>
       </section>
     </>

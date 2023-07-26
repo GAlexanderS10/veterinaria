@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../../styles/PerfilCliente.css';
+import Perfil from '../../assets/perfildefecto.png'
 
 const BuscarCliente = () => {
   const [cliente, setCliente] = useState(null);
 
   useEffect(() => {
-    // Función para obtener los datos del cliente por DNI
+
     const obtenerClientePorDNI = async () => {
       const dniUsuario = localStorage.getItem('dni');
       try {
         const response = await axios.get(`https://localhost:7266/api/Cliente/Dni/${dniUsuario}`);
         setCliente(response.data);
 
-        // Almacenar el ID del cliente en el localStorage
         localStorage.setItem('clienteId', response.data.clienteId);
       } catch (error) {
         console.error('Error al obtener los datos del cliente:', error);
@@ -28,10 +28,11 @@ const BuscarCliente = () => {
       {cliente ? (
         <div>
           <h1 className="titulo-cliente-cl">BIENVENIDO</h1>
+          <hr/>
           <div className="card_datos_cliente">
             <div className="card__perfil">
               <div className="card__nombre">
-                <img className="img-cliente" src="https://www.markuptag.com/images/user-img-1.jpg" alt="" />
+                <img className="img-cliente" src={Perfil} alt="" />
               </div>
               <div className="card__descripcion">
                 <div className="detalle-texto-cliente">

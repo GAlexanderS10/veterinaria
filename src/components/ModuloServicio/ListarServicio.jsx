@@ -25,7 +25,8 @@ const ListarServicio = () => {
 
     <div>
       <div className="titulo-servicios">
-        <h2>Servicios que Ofrecemos</h2>
+        <h1  className='titulo-mascotas-cl'>Servicios que Ofrecemos</h1>
+        <hr/>
       </div>
       <div className="contenedor-servicio">
         {servicios.map((servicio) => (

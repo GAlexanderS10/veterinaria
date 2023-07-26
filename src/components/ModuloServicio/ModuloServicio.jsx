@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
-import ListarServicio from './ListarServicio'
+import RegistrarServicio from './RegistrarServicio'
+import BuscarServicio from './BuscarServicio'
 export const ModuloServicio = () => {
 
 
@@ -7,7 +8,8 @@ export const ModuloServicio = () => {
     
       <Fragment>
         <div>
-          <ListarServicio/>
+        <RegistrarServicio/>
+          <BuscarServicio/>
         </div>
       </Fragment>
 

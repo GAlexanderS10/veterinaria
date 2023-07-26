@@ -127,6 +127,24 @@ body.dark{
     box-shadow: 2px 2px 5px rgb(216, 216, 216);
 }
 
+.btn-eliminar-cliente  {
+    background-color: var(--btn-eliminar); 
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    color: white;
+}
+
+
+.btn-eliminar-cliente:hover  {
+    background: #f77061;
+    transition: var(--tran-04);
+    box-shadow: 2px 2px 5px rgb(216, 216, 216);
+}
+
   .card__perfil:hover{
       border: solid rgb(62, 158, 248) 2px;
   }

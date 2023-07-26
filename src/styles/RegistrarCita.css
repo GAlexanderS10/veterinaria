@@ -1,0 +1,130 @@
+/* Estilos para el botón de agregar cita */
+
+  /* Estilos para el contenedor del formulario de cita */
+  .contenedor-registro-cita {
+    max-width: 600px; /* Ajusta el ancho máximo del formulario según tu preferencia */
+    background: #fff;
+    padding: 25px 30px;
+    outline: 2px solid #9b59b6;
+    border-radius: 5px;
+  }
+
+
+
+
+
+  .formulario-cita .input-box-cita select{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .formulario-cita .input-box-cita select:focus,
+  .formulario-cita .input-box-cita select:valid{
+    border-color: #9b59b6;
+  }
+
+
+
+
+
+
+  
+  /* Estilos para el título del formulario de cita */
+  .titulo-registro-cita {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .titulo-registro-cita::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background: #9b59b6;
+  }
+  
+  /* Estilos para el formulario de cita */
+  .formulario-cita .details-citas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .formulario-cita .input-box-cita {
+    margin: 20px 0 12px 0;
+    width: calc(100% / 2 - 20px);
+  }
+  
+  .formulario-cita .nombres-inputs {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .formulario-cita .input-box-cita input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .formulario-cita .input-box-cita input:focus,
+  .formulario-cita .input-box-cita input:valid {
+    border-color: #9b59b6;
+  }
+  
+  /* Estilos para el botón de registrar cita */
+  .formulario-cita .btn-cli-add {
+    height: 45px;
+    margin: 45px 0;
+  }
+  
+  .formulario-cita .btn-cli-add input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+  
+  .formulario-cita .btn-cli-add input:hover {
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+  
+  /* Estilos responsivos */
+  @media screen and (max-width: 1068px) {
+    .formulario-cita .input-box-cita {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .contenedor-registro-cita {
+      padding: 15px;
+    }
+  
+    .formulario-cita .input-box-cita {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  
